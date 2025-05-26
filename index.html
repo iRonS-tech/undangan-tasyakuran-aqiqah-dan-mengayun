@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Tasyakuran Aqiqah & Mengayun</title>
+    <link rel="icon" href="assets/Screenshot 2025-05-26 003022.png" type="png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Dancing+Script:wght@700&display=swap');
+
+        body {
+            font-family: 'Amiri', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f3e9;
+            color: #333;
+            background-image: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            color: #8e44ad;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .child-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #f1c40f;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .child-name {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .child-name h2 {
+            font-size: 2rem;
+            color: #2980b9;
+            margin-bottom: 5px;
+        }
+
+        .child-name p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .details {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: rgba(241, 196, 15, 0.1);
+            border-radius: 8px;
+            border-left: 5px solid #f1c40f;
+        }
+
+        .details h3 {
+            font-size: 1.5rem;
+            color: #16a085;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .details p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .countdown {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: rgba(46, 204, 113, 0.1);
+            border-radius: 8px;
+        }
+
+        .countdown h3 {
+            font-size: 1.5rem;
+            color: #27ae60;
+            margin-bottom: 15px;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            min-width: 70px;
+        }
+
+        .countdown-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+        }
+
+        .map {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .map h3 {
+            font-size: 1.5rem;
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+
+        .map-container {
+            height: 300px;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .prayer-board {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: rgba(52, 152, 219, 0.1);
+            border-radius: 8px;
+        }
+
+        .prayer-board h3 {
+            font-size: 1.5rem;
+            color: #3498db;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .prayer-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .prayer-form input,
+        .prayer-form textarea {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Amiri', serif;
+            font-size: 1rem;
+        }
+
+        .prayer-form textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .prayer-form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .prayer-form button:hover {
+            background-color: #2980b9;
+        }
+
+        .prayer-messages {
+            margin-top: 30px;
+        }
+
+        .prayer-message {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .prayer-message h4 {
+            margin: 0 0 5px 0;
+            color: #2c3e50;
+        }
+
+        .prayer-message p {
+            margin: 0;
+            color: #555;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #777;
+        }
+
+        .audio-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .child-name h2 {
+                font-size: 1.6rem;
+            }
+
+            .child-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .countdown-item {
+                min-width: 60px;
+            }
+
+            .countdown-number {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Bismillahirrahmanirrahim</h1>
+            <p>Dengan memohon rahmat Allah SWT</p>
+            <p>Kami bermaksud mengundang Bapak/Ibu/Saudara/i dalam rangka acara Tasyakuran Aqiqah & Mengayun anak kami:
+            </p>
+        </div>
+
+        <img src="assets/Screenshot 2025-05-26 003022.png" alt="syafik" class="child-photo">
+
+        <div class="child-name">
+            <h2>Khaled Zubair Syafiqi Harahap</h2>
+            <p>Lahir di Medan, 6 Januari 2025</p>
+            <p>Putra dari Bapak Marwan & Ibu Arfa</p>
+        </div>
+
+        <div class="details">
+            <h3>Waktu & Tempat</h3>
+            <p>Acara berlangsung pada:</p>
+            <p>Minggu, 22 Juni 2025 10.00 WIB</p>
+            <p>Bertempat di:</p>
+            <p>Dusun Garonggang<br>
+                Ds. Marisi Kec. Angkola Timur <br>
+                (Lokasi GPS di bawah) </p>
+            <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir
+                memberikan doa selamat kepada ananda kami tercinta</p>
+            <p><strong>Assalamu'alaikum Warahmatullahi Wabarakatuh</strong></p>
+        </div>
+
+        <div class="countdown">
+            <h3>Menuju Acara Tasyakuran</h3>
+            <div class="countdown-timer">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Hari</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Jam</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Menit</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Detik</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="map">
+            <h3>Lokasi Acara</h3>
+            <div class="map-container" id="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3988.447119787337!2d99.33103299999999!3d1.5021870000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMcKwMzAnMDcuOSJOIDk5wrAxOSc1MS43IkU!5e0!3m2!1sid!2sid!4v1748250716309!5m2!1sid!2sid"
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <p style="margin-top: 15px;">
+                <a href="https://maps.app.goo.gl/NHufqpkG5NPek1L79" target="_blank"
+                    style="color: #e74c3c; text-decoration: none;">
+                    Buka di Google Maps
+                </a>
+            </p>
+        </div>
+
+        <div class="prayer-board">
+            <h3>Papan Doa & Ucapan</h3>
+            <div class="prayer-form">
+                <input type="text" id="name" placeholder="Nama Anda" required>
+                <textarea id="message" placeholder="Tulis doa dan ucapan Anda disini..." required></textarea>
+                <button id="submit-prayer">Kirim Doa</button>
+            </div>
+
+            <div class="prayer-messages" id="prayer-messages">
+                <!-- Doa akan muncul di sini -->
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Terima kasih atas doa dan partisipasinya</p>
+            <p>Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+        </div>
+    </div>
+
+    <div class="audio-control" id="audio-control">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+    </div>
+
+    <audio id="background-music" loop>
+        <source src="assets/audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Hitung mundur
+        function updateCountdown() {
+            // Set tanggal acara (ganti dengan tanggal acara Anda)
+            const eventDate = new Date('2025-06-22T10:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Peta
+        function initMap() {
+            // Koordinat lokasi acara (ganti dengan koordinat yang sesuai)
+            const location = { lat: 3.5952, lng: 98.6722 };
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: location
+            });
+            new google.maps.Marker({
+                position: location,
+                map: map,
+                title: 'Lokasi Tasyakuran Aqiqah & Mengayun'
+            });
+        }
+
+        // Load Google Maps API
+        function loadGoogleMaps() {
+            const script = document.createElement('script');
+            script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap`;
+            script.async = true;
+            script.defer = true;
+            document.body.appendChild(script);
+        }
+
+        // Jika Anda memiliki API Key Google Maps, aktifkan fungsi ini
+        // loadGoogleMaps();
+
+          // Papan doa
+        document.getElementById('submit-prayer').addEventListener('click', function() {
+            const name = document.getElementById('name').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (name && message) {
+                const prayerMessages = document.getElementById('prayer-messages');
+                const prayerElement = document.createElement('div');
+                prayerElement.className = 'prayer-message';
+                prayerElement.innerHTML = `
+                    <h4>${name}</h4>
+                    <p>${message}</p>
+                `;
+                
+                // Tambahkan di atas pesan yang sudah ada
+                if (prayerMessages.firstChild) {
+                    prayerMessages.insertBefore(prayerElement, prayerMessages.firstChild);
+                } else {
+                    prayerMessages.appendChild(prayerElement);
+                }
+                
+                // Kosongkan form
+                document.getElementById('name').value = '';
+                document.getElementById('message').value = '';
+                
+                // Simpan ke localStorage
+                savePrayer(name, message);
+            } else {
+                alert('Harap isi nama dan doa/ucapan Anda');
+            }
+        });
+        
+        // Simpan doa ke localStorage
+        function savePrayer(name, message) {
+            let prayers = JSON.parse(localStorage.getItem('prayers')) || [];
+            prayers.unshift({ name, message, timestamp: new Date().toISOString() });
+            localStorage.setItem('prayers', JSON.stringify(prayers));
+        }
+        
+        // Muat doa dari localStorage saat halaman dimuat
+        function loadPrayers() {
+            const prayers = JSON.parse(localStorage.getItem('prayers')) || [];
+            const prayerMessages = document.getElementById('prayer-messages');
+            
+            prayers.forEach(prayer => {
+                const prayerElement = document.createElement('div');
+                prayerElement.className = 'prayer-message';
+                prayerElement.innerHTML = `
+                    <h4>${prayer.name}</h4>
+                    <p>${prayer.message}</p>
+                `;
+                prayerMessages.appendChild(prayerElement);
+            });
+        }
+        
+        // Audio control
+        const audio = document.getElementById('background-music');
+        const audioControl = document.getElementById('audio-control');
+        let isPlaying = false;
+        
+        audioControl.addEventListener('click', function() {
+            if (isPlaying) {
+                audio.pause();
+                audioControl.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    </svg>
+                `;
+            } else {
+                audio.play();
+                audioControl.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                    </svg>
+                `;
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        // Muat doa saat halaman dimuat
+        window.addEventListener('DOMContentLoaded', loadPrayers);
+    </script>
+</body>
+</html>
